@@ -2,11 +2,11 @@
 <html lang="en">
 
 <?php 
-include('/src/Config.php');
-include('/src/Post.php');
-include('/src/Blog.php');
-include('/src/Header.php');
-
+include('src/Config.php');
+include('src/Post.php');
+include('src/Blog.php');
+include('src/Header.php');
+include('src/Bio.php');
 
 $blog = new Blog;
 $header = $blog->getHeader();
@@ -14,6 +14,7 @@ $header = $blog->getHeader();
 $post = new Post;
 $post = $post->getPostByName($_GET["goto"]);
 
+$bio = $blog->getBio();
 ?>
 
 <head>
@@ -67,7 +68,7 @@ $post = $post->getPostByName($_GET["goto"]);
 						<div class="col-lg-12 ">					
 							<div class="row spacer-20 meta" >
 								<div class="col-lg-2">
-									<img src="img/author.jpg" class="img-responsive author-image" alt="">
+									<img src="<?php echo $bio->foto?>" class="img-responsive author-image" alt="">
 								</div>
 								<div class="col-lg-3 col-lg-pull-1 spacer-20" >
 									<span class=" "><?php echo $post->authorName ?></span>

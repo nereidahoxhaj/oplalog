@@ -2,11 +2,11 @@
 <html lang="en">
 
 <?php
-include('/src/Config.php');
-include('/src/Post.php');
-include('/src/Blog.php');
-include('/src/Bio.php');
-include('/src/Header.php');
+include('src/Config.php');
+include('src/Post.php');
+include('src/Bio.php');
+include('src/Blog.php');
+include('src/Header.php');
 
 $blog = new Blog;
 $bio = $blog->getBio(); 
@@ -23,7 +23,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $header->companyName ?> | <?php echo $header->slogan ?></title>
+    <title><?php echo $header->companyName.' | '.$header->slogan  ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -69,7 +69,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 							<div class="col-lg-12 ">					
 								<div class="row spacer-20 meta" >
 									<div class="col-lg-2">
-										<img src="img/author.jpg" class="img-responsive author-image" alt="">
+										<img src="<?php echo $bio->foto?>" class="img-responsive author-image" alt="">
 									</div>
 									<div class="col-lg-3 col-lg-pull-1 spacer-20" >
 										<span class=" "><?php echo $post['post_author']  ?></span>
@@ -99,7 +99,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 											<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>&title=Check%20this%20out!&summary=Interesting%20post&source="><i class="fa fa-linkedin-square fa-2x"></i></a>
 											<a href="http://twitter.com/intent/tweet?url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>&via=<?php echo $post['post_author_twitter']  ?>&text=check this out" ><i class="fa fa-twitter-square   fa-2x"></i></a>
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>"><i class="fa fa-facebook-square  fa-2x"></i></a>
-											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link?>&media=<?php echo $actual_link.'config/post/'.$post['post_image']?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
+											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link?>&media=<?php echo $actual_link.$post['post_image']?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
 										</div>
 										
 									</div>

@@ -20,7 +20,6 @@ class Post {
 	private $intro;
 	private $content;
 	private $comments;
-	private $tags;
 	
 	public function __get($property) {
 		if (property_exists($this, $property)) {
@@ -75,12 +74,13 @@ class Post {
 			$this->date = str_replace('-', '', $fcontents[3]);
 
 			// Define the post intro.
-			$this->intro = Markdown($fcontents[7]);
-
+			$this->intro = Markdown($fcontents[5]);
+			
+			
 			// Define the post content
 			//$this->content = Markdown($fcontents[8]);
 			$this->content = Markdown(join('', array_slice($fcontents, 6, filesize(".".POSTS_DIR.$fileName) -1)));
-			//var_dump($this->content);
+			
 			return $this;
 	}
 	

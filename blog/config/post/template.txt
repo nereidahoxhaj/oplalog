@@ -1,0 +1,47 @@
+## your post title here
+- your name
+- your twitter name
+- 01/01/2015
+
+Write here the introduction of your post
+
+Write here the content of the post following the syntax explained in the getting started.
+
+###### PARAGRAPHS
+To create a paragraph you have to simply create a blank line.
+ 
+ 
+###### EMPHASIS
+This is a **bold** text.
+ 
+ 
+###### HEADERS
+# title 1
+## title 2
+### title 3
+
+
+
+###### LISTS
+* element 1
+* element 2
+* element 3
+
+and more lists: 
+
+1. first
+2. second
+3. third
+
+
+###### QUOTES
+> test quote
+
+
+###### LINKS
+[Oplalog](https://oplasolustions/blog)
+
+
+###### IMAGES
+![Oplalog logo](http://oplasolutions.be/blog/config/bio/header.jpg)
+  

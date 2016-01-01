@@ -35,8 +35,7 @@ define('HEADER_LOGO', $header_logo);
  		
  		
  		// Define the header title.
- 		$this->companyName = str_replace(array("\n", '#'), '', $fcontents[0]);
- 		
+ 		$this->companyName = $fcontents[0];
  		
  		// Define the slogan 
  		$this->slogan = $fcontents[1];
@@ -44,6 +43,7 @@ define('HEADER_LOGO', $header_logo);
  		// Define the logo
  		$this->logo = HEADER_DIR.HEADER_LOGO;
 
+ 		return $this;
  	}
  }
  
