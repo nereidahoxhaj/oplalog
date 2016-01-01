@@ -30,20 +30,20 @@ define('HEADER_LOGO', $header_logo);
  		
  		error_log("getHeader ", 0);
  		
- 		// Define the post file.
+ 		// Define the header file.
  		$fcontents = file(".".HEADER_DIR.HEADER_TXT);
  		
  		
- 		// Define the post title.
+ 		// Define the header title.
  		$this->companyName = str_replace(array("\n", '#'), '', $fcontents[0]);
  		
  		
- 		// Define the post content
+ 		// Define the slogan 
  		$this->slogan = $fcontents[1];
  		
- 		// Define the post content
+ 		// Define the logo
  		$this->logo = HEADER_DIR.HEADER_LOGO;
- 		return $this;
+
  	}
  }
  
