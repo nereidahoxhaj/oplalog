@@ -7,9 +7,6 @@ include('/src/Post.php');
 include('/src/Blog.php');
 include('/src/Bio.php');
 include('/src/Header.php');
-//$post = new Post;
-//$category = "Posting";
-//$posts = $post->get_posts_for_category($category);
 
 $blog = new Blog;
 $bio = $blog->getBio(); 
@@ -58,16 +55,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 <?php //echo var_dump($blog->getPosts());
 
 ?>
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" >
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>"><?php echo $header->logo ?></a>
-            </div>
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
 
+	<?php include 'mainNav.php';?>
     <section role="blog">
         <div class="container">
             <div class="row">
@@ -123,57 +112,14 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 					<?php } ?>					
 	               </div>
 				
-				<div class="col-lg-3 col-lg-offset-1 post">
-					<div class="row">
-						<div class="col-lg-12 no-padding bio-img-outer" >
-							<img src="<?php echo $bio->image ?>" class="img-responsive post-image blur" alt="">
-							<div class="bio-img-inner">
-								<img src="<?php echo $bio->foto ?>" class="img-responsive bio-img">
-							</div>
-						</div>	
-						
-						<div class="col-lg-12">		
-							<div class="spacer-40"></div>						
-							<h2 class="section-heading padding-top-20"><?php echo $bio->title ?></h2>
-							<hr class="light">
-							<p ><?php echo $bio->content ?></p>
-							<div class="spacer-20"></div>
-						</div>	
-					</div>
-				</div>
+				<?php include 'bio.php';?>
 				
-				<div class="col-lg-3 col-lg-offset-1 post spacer-40">
-					<h5 class="section-heading padding-top-20">CATEGORIES</h5>
-					<ul class="list-group">
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-					</ul>
-				</div>
+				<?php include 'categories.php';?>
             </div>
         </div>
     </section>
 
-
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                </div>
-               
-                <div class="col-lg-4 col-lg-offset-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:hello@oplasolutsions.be">hello@oplasolutsions.be</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+	<?php include 'footer.php';?>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

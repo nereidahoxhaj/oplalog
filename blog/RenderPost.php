@@ -13,7 +13,6 @@ $header = $blog->getHeader();
 
 $post = new Post;
 $post = $post->getPostByName($_GET["goto"]);
-//$allPosts = $post->getAllPosts();
 
 ?>
 
@@ -55,15 +54,7 @@ $post = $post->getPostByName($_GET["goto"]);
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" >
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>"><?php echo $header->logo ?></a>
-            </div>
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+	<?php include 'mainNav.php';?>
 
     <section role="blog">
         <div class="container">
@@ -119,56 +110,13 @@ $post = $post->getPostByName($_GET["goto"]);
 									
 	               </div>
 				
-				<div class="col-lg-3 col-lg-offset-1 post">
-					<div class="row">
-						<div class="col-lg-12 no-padding bio-img-outer" >
-							<img src="img/portfolio/1.jpg" class="img-responsive post-image blur" alt="">
-							<div class="bio-img-inner">
-								<img src="img/author.jpg" class="img-responsive bio-img">
-							</div>
-						</div>	
-						
-						<div class="col-lg-12">		
-							<div class="spacer-40"></div>						
-							<h2 class="section-heading padding-top-20">About</h2>
-							<hr class="light">
-							<p >Opla Weblog has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. No strings attached!</p>
-							<div class="spacer-20"></div>
-						</div>	
-					</div>
-				</div>
-				
-				<div class="col-lg-3 col-lg-offset-1 post spacer-40">
-					<h5 class="section-heading padding-top-20">CATEGORIES</h5>
-					<ul class="list-group">
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-						<li class="list-group-item"><span class="badge">14</span><a href="#">category 1</a></li>
-					</ul>
-				</div>
+				<?php include 'bio.php';?>
+				<?php include 'categories.php';?>
             </div>
         </div>
     </section>
 
-
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-                </div>
-               
-                <div class="col-lg-4 col-lg-offset-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:hello@oplasolutsions.be">hello@oplasolutsions.be</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+	<?php include 'footer.php';?>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
