@@ -6,5 +6,5 @@
 - published
 
 This is my first post intro. 
-![Alt text](img/author.jpg)
+
 This is my first post Your post text starts here. 

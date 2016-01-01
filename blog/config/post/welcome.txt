@@ -9,7 +9,9 @@ Oplalog is now installed and ready to go. Now all you have to do is publish your
 
 Oplalog has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
 
-Oplalog2 has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
+Oplalog2 has everything you need to get your new **blog** up and running in no time! Open source, free to download, and easy to use. 
+
+![Alt text](img/author.jpg)
 
 Oplalog3 has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
 
