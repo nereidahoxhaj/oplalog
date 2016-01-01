@@ -1,10 +1,10 @@
 <?php
+
 class Blog{
 	private $bio;
 	private $header;
 	private $posts;
 	private $categories;
-	
 	
 	public function __get($property) {
 		if (property_exists($this, $property)) {

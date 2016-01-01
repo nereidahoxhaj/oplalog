@@ -2,9 +2,16 @@
 <html lang="en">
 
 <?php 
+include('/src/Config.php');
 include('/src/Post.php');
-$post = new Post;
+include('/src/Blog.php');
+include('/src/Header.php');
 
+
+$blog = new Blog;
+$header = $blog->getHeader();
+
+$post = new Post;
 $post = $post->getPostByName($_GET["goto"]);
 //$allPosts = $post->getAllPosts();
 
@@ -18,7 +25,7 @@ $post = $post->getPostByName($_GET["goto"]);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Oplalog</title>
+     <title><?php echo $header->logo ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -52,7 +59,7 @@ $post = $post->getPostByName($_GET["goto"]);
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="#page-top">Oplalog</a>
+                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>"><?php echo $header->logo ?></a>
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -92,7 +99,7 @@ $post = $post->getPostByName($_GET["goto"]);
 							<div class="spacer-20">
 								<div class="row">
 									<div class="col-lg-6 " >
-										<a href="#" class="btn btn-primary btn-xl page-scroll">Continue reading</a>
+										<a href="<?php echo $blog_url?>" class="btn btn-primary btn-xl page-scroll">Go Back</a>
 									</div>
 									<div class="col-lg-6 spacer-10 text-right" >
 										<a href="https://plus.google.com/share?url=oplasolutions.be"><i class="fa fa-google-plus-square fa-2x"></i></a>

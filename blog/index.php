@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
+<?php
+include('/src/Config.php');
 include('/src/Post.php');
 include('/src/Blog.php');
 include('/src/Bio.php');
@@ -61,8 +62,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="#page-top"><?php echo $header->logo ?></a>
-                
+                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>"><?php echo $header->logo ?></a>
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -103,7 +103,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 								<div class="spacer-20">
 									<div class="row">
 										<div class="col-lg-6 " >
-											<a href="RenderPost.php?goto=<?php echo $post['fname']  ?>" class="btn btn-primary btn-xl page-scroll">Continue reading</a>
+											<a href="RenderPost.php?goto=<?php echo $post['fname']  ?>" class="btn btn-primary btn-xl page-scroll">Tell me more</a>
 										</div>
 										<div class="col-lg-6 spacer-10 text-right" >
 											<a href="https://plus.google.com/share?url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>"><i class="fa fa-google-plus-square fa-2x"></i></a>

@@ -23,8 +23,5 @@ $post_image_file_extension = '.jpg';
 
 $blog_email = "hello@oplasolutions.be";
 $blog_twitter = "OplaSolutions";
-$blog_url = "http://localhost/oplasolutions/blog";
-$blog_title = "Opla Weblog";
-$meta_description = "";
-$intro_title = "Opla Weblog";
-$intro_text = "Hello, this is a space where we share our ideas, thoughts and all that catches our attention.";
+$blog_url = "http://localhost/blog";
+

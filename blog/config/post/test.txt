@@ -1,9 +1,10 @@
-# test post
+## test post
 - Nereida
 - nereidahoxhaj
-- 01/03/2015
+- 01/01/2015
 - Posting
 - published
 
 This is my first post intro. 
+![Alt text](img/author.jpg)
 This is my first post Your post text starts here. 

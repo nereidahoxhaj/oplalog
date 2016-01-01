@@ -1,9 +1,38 @@
-# We've got what you need!
+## We've got what you need!
 - Nereida Hoxhaj
 - nereidahoxhaj
-- 01/01/2015
+- 01/03/2015
 - Posting
 - published
 
-Opla Weblog has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. No strings attached!
-Try it now! 
+Oplalog is now installed and ready to go. Now all you have to do is publish your first post. To do that, just follow these [simple instructions](https://github.com/nereidahoxhaj/oplalog/blob/master/README.md) and enjoy sharing your ideas with the world.  
+
+Oplalog has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
+
+Oplalog2 has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
+
+Oplalog3 has everything you need to get your new blog up and running in no time! Open source, free to download, and easy to use. 
+
+* test
+* test1
+* test2
+
+> test quote
+
+test after quote 
+
+# header 1
+
+## header 2
+
+### header 3
+
+#### header 4
+
+##### header 5
+
+###### header 6
+
+1. test
+2. test1
+3. test2
