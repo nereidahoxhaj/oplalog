@@ -4,12 +4,13 @@ include($settings_file);
 
 define('HEADER_DIR', $header_dir);
 define('HEADER_TXT', $header_txt);
+define('HEADER_LOGO', $header_logo);
 
  class Header {
  	
  	private $logo;
  	private $slogan;
- 	private $image;
+ 	private $companyName;
  	
  	public function __get($property) {
  		if (property_exists($this, $property)) {
@@ -34,12 +35,14 @@ define('HEADER_TXT', $header_txt);
  		
  		
  		// Define the post title.
- 		$this->logo = str_replace(array("\n", '#'), '', $fcontents[0]);
+ 		$this->companyName = str_replace(array("\n", '#'), '', $fcontents[0]);
  		
  		
  		// Define the post content
- 		$this->slogan = Markdown($fcontents[1]);
+ 		$this->slogan = $fcontents[1];
  		
+ 		// Define the post content
+ 		$this->logo = HEADER_DIR.HEADER_LOGO;
  		return $this;
  	}
  }

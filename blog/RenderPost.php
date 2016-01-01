@@ -24,7 +24,7 @@ $post = $post->getPostByName($_GET["goto"]);
     <meta name="description" content="">
     <meta name="author" content="">
 
-     <title><?php echo $header->logo ?></title>
+    <title><?php echo $header->companyName ?> | <?php echo $header->slogan ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">

@@ -2,7 +2,9 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>"><?php echo $header->logo ?></a>
+                <a class="navbar-brand page-scroll" href="<?php echo $blog_url?>">
+                <img src="<?php echo $header_logo ?>" alt="" width="100">
+                </a>
             </div>
         </div>
         <!-- /.container-fluid -->
