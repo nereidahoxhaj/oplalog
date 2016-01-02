@@ -12,6 +12,7 @@ define('BLOG_EMAIL', $blog_email);
 define('BLOG_TWITTER', $blog_twitter);
 
 class Post {
+	private $fileName;
 	private $image;
 	private $authorName;
 	private $authorTwitter;
@@ -58,8 +59,8 @@ class Post {
 
 			//Define the post image file.
 			$filePrefix = $this->before('.', $fileName);
-			$this->image = ".".POSTS_DIR.$filePrefix.IMG_FILE_EXT;
-
+			$this->image = POSTS_DIR.$filePrefix.IMG_FILE_EXT;
+			//var_dump($this->image);
 			// Define the post title.
 			//$this->title = str_replace(array("\n", '#'), '', $fcontents[0]);
 			$this->title = Markdown($fcontents[0]);

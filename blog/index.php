@@ -64,7 +64,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	                <?php foreach($blog->getPosts() as $post) { ?>
 						<div class="row post" role="post" >
 							<div class="col-lg-12  no-padding" >
-								<img src="<?php echo $post['post_image']  ?>" class="img-responsive post-image" alt="">
+								<img src="<?php echo $blog_url.$post['post_image']  ?>" class="img-responsive post-image" alt="">
 							</div>	
 							<div class="col-lg-12 ">					
 								<div class="row spacer-20 meta" >
@@ -95,11 +95,11 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 											<a href="RenderPost.php?goto=<?php echo $post['fname']  ?>" class="btn btn-primary btn-xl page-scroll">Tell me more</a>
 										</div>
 										<div class="col-lg-6 spacer-10 text-right" >
-											<a href="https://plus.google.com/share?url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
-											<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>&title=Check%20this%20out!&summary=Interesting%20post&source="><i class="fa fa-linkedin-square fa-2x"></i></a>
-											<a href="http://twitter.com/intent/tweet?url=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>&via=<?php echo $post['post_author_twitter']  ?>&text=check this out" ><i class="fa fa-twitter-square   fa-2x"></i></a>
-											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $actual_link.'RenderPost.php?'.$post['fname']?>"><i class="fa fa-facebook-square  fa-2x"></i></a>
-											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link?>&media=<?php echo $actual_link.$post['post_image']?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
+											<a href="https://plus.google.com/share?url=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
+											<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>&title=Check%20this%20out!&summary=Interesting%20post&source="><i class="fa fa-linkedin-square fa-2x"></i></a>
+											<a href="http://twitter.com/intent/tweet?url=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>&via=<?php echo $post['post_author_twitter']  ?>&text=check this out" ><i class="fa fa-twitter-square   fa-2x"></i></a>
+											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>"><i class="fa fa-facebook-square  fa-2x"></i></a>
+											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>&media=<?php echo $blog_url.$post['post_image']?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
 										</div>
 										
 									</div>
