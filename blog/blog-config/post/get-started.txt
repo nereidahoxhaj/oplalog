@@ -1,0 +1,104 @@
+## Getting started
+- Nereida
+- nereidahoxhaj
+- 01/01/2015
+
+Oplalog is installed and ready to go. All you have to do is publish your first post. To do that, just follow these [simple instructions](https://github.com/nereidahoxhaj/oplalog/blob/master/README.md) and enjoy sharing your ideas with the world. To start follow the getting started guide below.  
+
+### Write your first post
+* Download [this template](http://oplasolutions.be/blog/config/post/template.txt) and fill in your name, twitter account, date, introduction and content of your post.
+* Rename the template to your-post.txt
+* Rename the header image of your post with the same name (your-post.jpg)
+* Upload both  your-post.txt and your-post.jpg in the post folder.
+
+That's it!
+
+### Post syntax
+
+
+###### PARAGRAPHS
+To create a paragraph you have to simply create a blank line.
+ 
+ 
+###### EMPHASIS
+To create a bold text surround it with double stars ** like in this example:
+
+	This is a **bold** text.
+
+is rendered as:
+
+This is a **bold** text.
+ 
+ 
+###### HEADERS
+
+To define a titles for your post you can use #.
+
+	# title 1
+	## title 2
+	### title 3
+
+and so on... are rendered as follows:
+
+# title 1
+## title 2
+### title 3
+
+
+
+###### LISTS
+To create a list you use * as in this example:
+
+	* element 1
+	* element 2
+	* element 3
+
+this is rendered as:
+
+* element 1
+* element 2
+* element 3
+
+or you can use numbers with a point as bellow:
+
+	1. first
+	2. second
+	3. third
+
+this will turn into: 
+
+1. first
+2. second
+3. third
+
+
+###### QUOTES
+To display a quote you use > like in this example:
+
+	> test quote
+
+is rendered as follows:
+
+> test quote
+
+
+###### LINKS
+To display a link you use [link text](https://your link) like in this exemple:
+
+	\[Oplalog](https://oplasolustions/blog)
+ 
+and the result is:
+
+[Oplalog](https://oplasolustions/blog)
+
+
+###### IMAGES
+Similar links, images have an ! before the square brackets. Syntax: \![Alt text](img/my-image.jpg):
+
+	![Oplalog logo](https://oplasolustions/blog/)
+ 
+is rendered as:
+
+![Oplalog logo](http://oplasolutions.be/blog/config/bio/header.jpg)
+
+
