@@ -65,7 +65,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <div class="col-lg-8 " >
 					<div class="row post" role="post" >
 						<div class="col-lg-12  no-padding" >
-							<img src="<?php echo $blog_url.$post->image ?>" class="img-responsive post-image" alt="">
+							<img src="<?php echo $post->image ?>" class="img-responsive post-image" alt="">
 						</div>	
 						<div class="col-lg-12 ">					
 							<div class="row spacer-20 meta" >
@@ -93,14 +93,14 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 							<div class="spacer-20">
 								<div class="row">
 									<div class="col-lg-6 " >
-										<a href="<?php echo $blog_url?>" class="btn btn-primary btn-xl page-scroll">Go Back</a>
+										<a href="<?php echo $header->blogURL?>" class="btn btn-primary btn-xl page-scroll">Go Back</a>
 									</div>
 									<div class="col-lg-6 spacer-10 text-right" >
 											<a href="https://plus.google.com/share?url=<?php echo $actual_link?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
 											<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $actual_link?>&title=Check%20this%20out!&summary=Interesting%20post&source="><i class="fa fa-linkedin-square fa-2x"></i></a>
 											<a href="http://twitter.com/intent/tweet?url=<?php echo $actual_link?>&via=<?php echo $post->authorTwitter?>&text=check this out" ><i class="fa fa-twitter-square   fa-2x"></i></a>
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $actual_link?>"><i class="fa fa-facebook-square  fa-2x"></i></a>
-											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link?>&media=<?php echo $blog_url.$post->image?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
+											<a href="https://pinterest.com/pin/create/button/?url=<?php echo $actual_link?>&media=<?php echo $header->blogURL.$post->image?>&description=Interesting%20post"><i class="fa fa-pinterest-square fa-2x"></i></a>
 									</div>
 									
 								</div>

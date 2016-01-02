@@ -8,8 +8,8 @@ include('markdown.php');
 define('POSTS_DIR', $posts_dir);
 define('FILE_EXT', $post_file_extension);
 define('IMG_FILE_EXT', $post_image_file_extension); 
-define('BLOG_EMAIL', $blog_email);
-define('BLOG_TWITTER', $blog_twitter);
+//define('BLOG_EMAIL', $blog_email);
+
 
 class Post {
 	private $fileName;
@@ -54,34 +54,56 @@ class Post {
 
 			error_log("getPostByName: reading file name: ".$fileName, 0);
 		
-			// Define the post file.
-			$fcontents = file(".".POSTS_DIR.$fileName);
-
+			if(is_dir("./..".POSTS_DIR)){
+				$post_dir = "./..".POSTS_DIR;
+			} else {
+				$post_dir = ".".POSTS_DIR;
+			}
+			
 			//Define the post image file.
 			$filePrefix = $this->before('.', $fileName);
-			$this->image = POSTS_DIR.$filePrefix.IMG_FILE_EXT;
-			//var_dump($this->image);
-			// Define the post title.
-			//$this->title = str_replace(array("\n", '#'), '', $fcontents[0]);
-			$this->title = Markdown($fcontents[0]);
-
-			// Define the post author.
-			$this->authorName = str_replace(array("\n", '-'), '', $fcontents[1]);
-
-			// Define the post author Twitter account.
-			$this->authorTwitter = str_replace(array("\n", '- '), '', $fcontents[2]);
-
-			// Define the published date.
-			$this->date = str_replace('-', '', $fcontents[3]);
-
-			// Define the post intro.
-			$this->intro = Markdown($fcontents[5]);
+			$this->image = "..".POSTS_DIR.$filePrefix.IMG_FILE_EXT;
 			
+			if (!file_exists($this->image))
+			{
+				$this->image = ".".POSTS_DIR."template.jpg";
+			}
 			
-			// Define the post content
-			//$this->content = Markdown($fcontents[8]);
-			$this->content = Markdown(join('', array_slice($fcontents, 6, filesize(".".POSTS_DIR.$fileName) -1)));
+			// Define the post file.
+			$fcontents = null;
+			$filePath = null;
+			try {
+				if (file_exists($post_dir.$fileName))
+				{
+					$filePath = $post_dir.$fileName;
+					$fcontents = file($filePath);
+				} else {
+					$filePath = ".".POSTS_DIR."template.txt";
+					$fcontents = file(".".POSTS_DIR."template.txt");
+				}
+			} catch (Exception $e) {
+				error_log($e);
+			}
 			
+			if($fcontents != null) {
+				// Define the post title.
+				$this->title = Markdown($fcontents[0]);
+				
+				// Define the post author.
+				$this->authorName = str_replace(array("\n", '-'), '', $fcontents[1]);
+	
+				// Define the post author Twitter account.
+				$this->authorTwitter = str_replace(array("\n", '- '), '', $fcontents[2]);
+	
+				// Define the published date.
+				$this->date = str_replace('-', '', $fcontents[3]);
+				
+				// Define the post intro.
+				$this->intro = Markdown($fcontents[5]);
+				
+				// Define the post content
+				$this->content = Markdown(join('', array_slice($fcontents, 6, filesize($filePath) -1)));
+			}
 			return $this;
 	}
 	
@@ -90,8 +112,14 @@ class Post {
 	/* Get All Posts Function
 	/*-----------------------------------------------------------------------------------*/
 	function getAllPosts() {
-	
-		if($handle = opendir(".".POSTS_DIR)) {
+		
+		if(is_dir("./..".POSTS_DIR)){
+			$post_dir = "./..".POSTS_DIR;
+		} else {	
+			$post_dir = ".".POSTS_DIR;
+		}
+		
+		if($handle = opendir($post_dir)) {
 	
 			$files = array();
 	
@@ -108,9 +136,10 @@ class Post {
 					$post_dates[] = date_format($date, 'Ydm');
 				}
 			}
-			
-			array_multisort($post_dates, SORT_DESC, $files);
-			
+
+			if(!empty($files)){
+				array_multisort($post_dates, SORT_DESC, $files);
+			}
 			closedir($handle);
 				
 			return $files;

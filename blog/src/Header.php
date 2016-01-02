@@ -11,6 +11,8 @@ define('HEADER_LOGO', $header_logo);
  	private $logo;
  	private $slogan;
  	private $companyName;
+ 	private $blogURL;
+ 	private $blogEmail;
  	
  	public function __get($property) {
  		if (property_exists($this, $property)) {
@@ -31,8 +33,13 @@ define('HEADER_LOGO', $header_logo);
  		error_log("getHeader ", 0);
  		
  		// Define the header file.
- 		$fcontents = file(".".HEADER_DIR.HEADER_TXT);
- 		
+ 		//$fcontents = file("./..".HEADER_DIR.HEADER_TXT);
+ 		if (file_exists("./..".HEADER_DIR.HEADER_TXT))
+		{
+			$fcontents = file("./..".HEADER_DIR.HEADER_TXT);
+		} else {
+			$fcontents = file("./".HEADER_DIR.HEADER_TXT);
+		}
  		
  		// Define the header title.
  		$this->companyName = $fcontents[0];
@@ -40,9 +47,17 @@ define('HEADER_LOGO', $header_logo);
  		// Define the slogan 
  		$this->slogan = $fcontents[1];
  		
+ 		$this->blogURL = $fcontents[2];
+ 		
+ 		$this->blogEmail = $fcontents[3];
+ 		
  		// Define the logo
- 		$this->logo = HEADER_DIR.HEADER_LOGO;
-
+ 		$this->logo = "./..".HEADER_DIR.HEADER_LOGO;
+ 		if (!file_exists($this->logo))
+ 		{
+ 			$this->logo = "./".HEADER_DIR.HEADER_LOGO;
+ 		}
+ 		
  		return $this;
  	}
  }

@@ -33,14 +33,31 @@ class Bio {
 	
 		error_log("getBio ", 0);
 	
-		// Define the post file.
-		$fcontents = file(".".BIO_DIR.BIO_TXT);
-	
 		//Define the bio image header file.
-		$this->image = ".".BIO_DIR.BIO_HEADER;
-	
+		$this->image = "./..".BIO_DIR.BIO_HEADER;
+		
+		if (!file_exists($this->image)) 
+		{
+			$this->image = "./".BIO_DIR.BIO_HEADER;
+		}
+		
+		
 		//Define the bio foto header file.
-		$this->foto = ".".BIO_DIR.BIO_FOTO;
+		$this->foto = "./..".BIO_DIR.BIO_FOTO;
+		
+		if (!file_exists($this->foto))
+		{
+			$this->foto = "./".BIO_DIR.BIO_FOTO;
+		}
+
+		// Define the bio file.
+		//$fcontents = file("./..".BIO_DIR.BIO_TXT);
+		if (file_exists("./..".BIO_DIR.BIO_TXT))
+		{
+			$fcontents = file("./..".BIO_DIR.BIO_TXT);
+		} else {
+			$fcontents = file("./".BIO_DIR.BIO_TXT);
+		}
 		
 		// Define the post title.
 		$this->title = str_replace(array("\n", '#'), '', $fcontents[0]);
