@@ -6,7 +6,7 @@
 Oplalog is installed and ready to go. All you have to do is publish your first post. To do that, just follow these [simple instructions](https://github.com/nereidahoxhaj/oplalog/blob/master/README.md) and enjoy sharing your ideas with the world. To start follow the getting started guide below.  
 
 ### Write your first post
-* Download [this template](http://oplasolutions.be/blog/config/post/template.txt) and fill in your name, twitter account, date, introduction and content of your post.
+* Download [this template](http://oplasolutions.be/blog/blog-config/post/template.txt) and fill in your name, twitter account, date, introduction and content of your post.
 * Rename the template to your-post.txt
 * Rename the header image of your post with the same name (your-post.jpg)
 * Upload both  your-post.txt and your-post.jpg in the post folder.
@@ -93,12 +93,12 @@ and the result is:
 
 
 ###### IMAGES
-Similar links, images have an ! before the square brackets. Syntax: \![Alt text](img/my-image.jpg):
+Similar links, images have an ! before the square brackets. Syntax: \!\[Alt text](img/my-image.jpg):
 
-	![Oplalog logo](https://oplasolustions/blog/)
+	![Header example](http://oplasolutions.be/blog/blog-config/bio/header.jpg)
  
 is rendered as:
 
-![Oplalog logo](http://oplasolutions.be/blog/config/bio/header.jpg)
+![Oplalog logo](http://oplasolutions.be/blog/blog-config/bio/header.jpg)
 
 
