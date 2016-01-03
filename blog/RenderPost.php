@@ -88,7 +88,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 							<div class=" spacer-20 separator"></div>
 							<h2 class="section-heading padding-top-20"><?php echo $post->title ?></h2>
 							<hr class="light">
-							<p ><?php echo $post->intro ?></p>
 							<p ><?php echo $post->content ?></p>
 							<div class="spacer-20">
 								<div class="row">
