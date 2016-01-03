@@ -2,8 +2,7 @@
 <projectDescription>
 	<name>oplalog</name>
 	<comment></comment>
-	<projects>
-	</projects>
+	<projects>test</projects>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.wst.validation.validationbuilder</name>
