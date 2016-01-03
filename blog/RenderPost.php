@@ -79,10 +79,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 									<i class="fa fa-calendar "></i>
 									<span ><?php echo $post->date  ?></span>
 								</div>
-								<div class="col-lg-4 col-lg-pull-1 spacer-20 text-right" >
-									<i class="fa fa-comments "></i>
-									<span>comments</span>
-								</div>								
+<!-- 								<div class="col-lg-4 col-lg-pull-1 spacer-20 text-right" > -->
+<!-- 									<i class="fa fa-comments "></i> -->
+<!-- 									<span>comments</span> -->
+<!-- 								</div>								 -->
 							</div>
 								
 							<div class=" spacer-20 separator"></div>
@@ -134,6 +134,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+
+	<link rel="stylesheet/less" type="text/css" href="less/creative.less" />
+	<link rel="stylesheet/less" type="text/css" href="less/oplalog.less" />
+	<script src="js/less.min.js" type="text/javascript"></script>
 
 </body>
 
