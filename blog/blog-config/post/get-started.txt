@@ -2,6 +2,7 @@
 - Nereida
 - nereidahoxhaj
 - 01/01/2015
+- oplalog
 
 Oplalog is installed and ready to go. All you have to do is publish your first post. To do that, just follow these [simple instructions](https://github.com/nereidahoxhaj/oplalog/blob/master/README.md) and enjoy sharing your ideas with the world. To start follow the getting started guide below.  
 

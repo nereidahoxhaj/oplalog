@@ -21,6 +21,7 @@ class Post {
 	private $intro;
 	private $content;
 	private $comments;
+	private $tags;
 	
 	public function __get($property) {
 		if (property_exists($this, $property)) {
@@ -98,8 +99,10 @@ class Post {
 				// Define the published date.
 				$this->date = str_replace('-', '', $fcontents[3]);
 				
+				$this->tags = explode(",", str_replace('-', '', $fcontents[4]));;
+				
 				// Define the post intro.
-				$this->intro = Markdown($fcontents[5]);
+				$this->intro = Markdown($fcontents[6]);
 				
 				// Define the post content
 				$this->content = Markdown(join('', array_slice($fcontents, 6, filesize($filePath) -1)));
@@ -122,7 +125,7 @@ class Post {
 		if($handle = opendir($post_dir)) {
 	
 			$files = array();
-	
+
 			while (false !== ($entry = readdir($handle))) {
 				if(substr(strrchr($entry,'.'),1)==ltrim(FILE_EXT, '.')) {
 					error_log("file name: ".$entry, 0);
@@ -130,7 +133,7 @@ class Post {
 					$post = $this->getPostByName($entry);
 					
 					$files[] = array('fname' => $entry,'post_image' => $post->image, 'post_title' => $post->title, 'post_author' => $post->authorName, 'post_author_twitter' => $post->authorTwitter,
-							'post_date' => $post->date, 'post_intro' => $post->intro, 'post_content' => $post->content);
+							'post_date' => $post->date, 'post_tags' => $post->tags, 'post_intro' => $post->intro, 'post_content' => $post->content);
 					
 					$date = new DateTime($post->date, new DateTimeZone('UTC'));
 					$post_dates[] = date_format($date, 'Ydm');
@@ -149,6 +152,21 @@ class Post {
 		}
 	}
 	
+	function getPostsByTag($tag) {
+		$files = array();
+		
+		$posts = $this->getAllPosts();
+		foreach ($posts as $post) {
+			foreach ($post['post_tags'] as $key=>$value) {
+				
+				if(strcasecmp($tag, trim($value)) == 0) {
+					$files[] = $post; 
+				}
+			}
+		}
+			
+		return $files;
+	}
 	
 }
 	

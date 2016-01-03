@@ -94,6 +94,13 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 								<div class="row">
 									<div class="col-lg-6 " >
 										<a href="<?php echo $header->blogURL?>" class="btn btn-primary btn-xl page-scroll">Go Back</a>
+										<span class="tag padding-left-20">Tags:</span>
+											<?php foreach($post->tags as $tag) { 
+													if(!ctype_space($tag)) {?>
+														<span class="tag"><?php echo $tag  ?></span>
+											<?php 
+													}
+											} ?>
 									</div>
 									<div class="col-lg-6 spacer-10 text-right" >
 											<a href="https://plus.google.com/share?url=<?php echo $actual_link?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
@@ -114,7 +121,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	               </div>
 				
 				<?php include 'bio.php';?>
-				<?php include 'categories.php';?>
+				<?php include 'tags.php';?>
             </div>
         </div>
     </section>

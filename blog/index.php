@@ -12,6 +12,14 @@ $blog = new Blog;
 $bio = $blog->getBio(); 
 $header = $blog->getHeader();
 
+if(empty($_GET["tag"])) {
+	$posts = $blog->getPosts();
+} else {
+	$p = new Post;
+	$posts = $p->getPostsByTag($_GET["tag"]);
+}
+//var_dump($p);
+
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 
@@ -60,7 +68,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 " >
-	                <?php foreach($blog->getPosts() as $post) { ?>
+	                <?php foreach($posts as $post) { ?>
 						<div class="row post" role="post" >
 							<div class="col-lg-12  no-padding" >
 								<img src="<?php echo $post['post_image']  ?>" class="img-responsive post-image" alt="">
@@ -92,6 +100,17 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 									<div class="row">
 										<div class="col-lg-6 " >
 											<a href="RenderPost.php?goto=<?php echo $post['fname']  ?>" class="btn btn-primary btn-xl page-scroll">Tell me more</a>
+											<span class="tag padding-left-20">Tags:</span>
+											<?php foreach($post['post_tags'] as $tag) { 
+													if(!empty($tag)) {?>
+														<span class="tag"><?php echo $tag  ?></span>
+											<?php 
+													}
+												} 
+												
+												
+												?>
+												
 										</div>
 										<div class="col-lg-6 spacer-10 text-right" >
 											<a href="https://plus.google.com/share?url=<?php echo $actual_link.'RenderPost.php?goto='.$post['fname']?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
@@ -113,7 +132,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				
 				<?php include 'bio.php';?>
 				
-				<?php include 'categories.php';?>
+				<?php include 'tags.php';?>
             </div>
         </div>
     </section>
