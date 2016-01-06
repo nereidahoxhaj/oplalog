@@ -1,0 +1,21 @@
+## We've got what you need!
+- Nereida Hoxhaj
+- nereidahoxhaj
+- 01/03/2015
+- getting started
+
+Hello and welcome to the simplest blog ever! Although there are some good blog frameworks out there we decided to build our own and share it with you. You're wandering why?
+
+### Why reinventing the wheel?
+1. Because we love it!
+2. Our proiver does not offer a database 
+3. To keep ownership of the content 
+4. To be able to edit the content offline
+
+...and this is what we came up with.
+
+
+### How does it work 
+Simple.
+You write you're post in a text file and then you upload it on the server together with the post image.
+Have a look a the [Getting started guide](http://oplasolustions/blog/RenderPost.php?goto=get-started.txt) form more info
