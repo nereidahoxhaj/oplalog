@@ -21,4 +21,9 @@ $posts_dir = "/blog-config/post/";
 $post_file_extension = '.txt';
 $post_image_file_extension = '.jpg';
 
+/*-----------------------------------------------------------------------------------*/
+/* User Configuration
+ /*-----------------------------------------------------------------------------------*/
 
+$login = "admin";
+$password = "admin";

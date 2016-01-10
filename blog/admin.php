@@ -12,6 +12,7 @@ $blog = new Blog;
 $bio = $blog->getBio(); 
 $header = $blog->getHeader();
 
+
 ?>
 
 
@@ -51,7 +52,9 @@ $header = $blog->getHeader();
 
 </head>
 <body>
-	<?php include 'mainNav.php';?>
+
+<?php include 'mainNav.php';?>
+      
     <section role="blog">
         <div class="container">
             <div class="row">

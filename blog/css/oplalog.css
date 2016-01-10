@@ -103,3 +103,42 @@ font-weight: bold;
 	white-space: nowrap;
 	vertical-align: baseline;
 }
+
+.form-signin {
+   max-width: 330px;
+   padding: 15px;
+   margin: 0 auto;
+}
+
+.form-signin .form-signin-heading
+{
+   margin-bottom: 10px;
+}
+
+
+.form-signin .form-control {
+   position: relative;
+   height: auto;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   padding: 10px;
+   font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+   z-index: 2;
+}
+
+ .navbar-default .nav > li > a, 
+ .navbar-default .nav > li > a:focus,
+ .navbar-default .nav > li > a:active,
+ .navbar-default .nav > li > a:visited,
+ .navbar-default .nav > li > a:hover
+  {
+ 	color: #f05f40;
+ 	text-transform: none;
+ }
+
+ 
+  
